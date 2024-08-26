@@ -1,0 +1,21 @@
+disp("Enter sequences of equal length using square brackets eg: [1 2 3 4]");
+seq1 = input("sequence 1: ");
+start1 = input("Start index of seq 1: ");
+seq2 = input("sequence 2: ");
+start2 = input("Start index of seq 2: ");
+[seq, l] = convolution(seq1, seq2, start1, start2);
+figure(1);
+subplot(311);
+stem(1: length(seq1), seq1);
+xlabel('n');
+ylabel('seq1');
+subplot(312);
+stem(1: length(seq2), seq2);
+xlabel('n');
+ylabel('seq2');
+subplot(313);
+stem(l, seq);
+title("convolution of seq 1 and 2");
+figure(2);
+stem(l, conv(seq1, seq2));
+
